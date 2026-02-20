@@ -1,6 +1,20 @@
 //template_h1fwjyj
 //service_76lazhe
 //MqYsCl6uQeR9iL2dv
+let isModalOpen = false;
+let isContrastToggled = false;
+
+function toggleContrast() {
+    isContrastToggled = !isContrastToggled;
+    if (isContrastToggled) {
+    document.body.classList += " dark-theme"
+    }
+
+    else {
+        document.body.classList.remove("dark-theme");
+    }
+  
+}
 
 function contact(event) {
     event.preventDefault();
@@ -23,4 +37,15 @@ function contact(event) {
         "The email service is temporarily unavailable. Please contact me directly at ChristinaLaporta1@gmail.com"
     );
    })
+}
+
+
+function toggleModal () {
+    if (isModalOpen) {
+             isModalOpen = false;
+        return document.body.classList.remove("modal--open");
+   
+    }
+      isModalOpen = true;
+    document.body.classList += " modal--open"
 }
